@@ -28,6 +28,11 @@ mkdir ~/box/1_code/2_backend
 mkdir ~/box/1_code/3_client
 mkdir ~/box/1_code/4_script
 
+# 针对文件目录，创建一个不经常访问的角落，存放maven内容
+mkdir ~/box/3_file/quiet_corner
+mkdir ~/box/3_file/quiet_corner/maven
+
+
 # 针对设置，创建对于的目录
 mkdir ~/box/4_config/maven_setting
 mkdir ~/box/4_config/idea_setting
