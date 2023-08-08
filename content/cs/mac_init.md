@@ -18,6 +18,8 @@ mkdir ~/box/2_doc
 mkdir ~/box/3_file
 # 存放一些必要的基础配置，包括maven配置等
 mkdir ~/box/4_config
+# 存放临时内容
+mkdir ~/box/5_tmp
 
 # 根据代码分类，创建对于的文件目录
 mkdir ~/box/1_code/1_frontend
