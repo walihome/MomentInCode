@@ -37,6 +37,22 @@ mkdir ~/box/4_config/idea_setting
 mkdir ~/Downloads/chrome
 ```
 
+## 软件安装配置
+### homebrew安装
+```shell
+# 下载 Homebrew 安装脚本
+curl -v https://raw.githubusercontent.com/Homebrew/install/master/install.sh > install-brew.sh
+
+# 修改 BREW_REPO 为国内镜像站
+sed -i '' 's|https://github.com/Homebrew/brew|https://mirrors.ustc.edu.cn/brew.git|g' install-brew.sh
+
+# 设置 HOMEBREW_CORE_GIT_REMOTE 环境变量为国内镜像站
+export HOMEBREW_CORE_GIT_REMOTE=https://mirrors.ustc.edu.cn/homebrew-core.git
+
+# 运行安装脚本
+bash install-brew.sh
+```
+
 ## 电脑软件配置
 - [ ] Paste
 
