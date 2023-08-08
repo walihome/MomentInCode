@@ -56,6 +56,9 @@ bash install-brew.sh
 ```shell
 #!/bin/bash
 
+# 卸载JDK
+brew uninstall openjdk@8
+
 # 安装 JDK
 brew install openjdk@8
 
