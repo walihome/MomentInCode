@@ -38,6 +38,9 @@ mkdir ~/Downloads/chrome
 ```
 
 ## 软件安装配置
+homebrew官网：https://brew.sh/
+
+
 ### homebrew安装
 ```shell
 # 下载 Homebrew 安装脚本
