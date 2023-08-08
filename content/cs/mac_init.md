@@ -48,20 +48,32 @@ homebrew官网：https://brew.sh/
 
 ### homebrew安装
 ```shell
-# 下载 Homebrew 安装脚本
-curl -v https://raw.githubusercontent.com/Homebrew/install/master/install.sh > install-brew.sh
+# homebrew安装脚本
+install_homebrew() {
+    # 下载 Homebrew 安装脚本
+    curl -v https://raw.githubusercontent.com/Homebrew/install/master/install.sh > install-brew.sh
 
-# 修改 BREW_REPO 为国内镜像站
-sed -i '' 's|https://github.com/Homebrew/brew|https://mirrors.ustc.edu.cn/brew.git|g' install-brew.sh
+    # 修改 BREW_REPO 为国内镜像站
+    sed -i '' 's|https://github.com/Homebrew/brew|https://mirrors.ustc.edu.cn/brew.git|g' install-brew.sh
 
-# 设置 HOMEBREW_CORE_GIT_REMOTE 环境变量为国内镜像站
-export HOMEBREW_CORE_GIT_REMOTE=https://mirrors.ustc.edu.cn/homebrew-core.git
+    # 设置 HOMEBREW_CORE_GIT_REMOTE 环境变量为国内镜像站
+    export HOMEBREW_CORE_GIT_REMOTE=https://mirrors.ustc.edu.cn/homebrew-core.git
 
-# 运行安装脚本
-bash install-brew.sh
+    # 运行安装脚本
+    bash install-brew.sh
 
-# 删除安装脚本
-rm install-brew.sh
+    # 删除安装脚本
+    rm install-brew.sh
+}
+
+# 检查homebrew是否已经安装，如果未安装，则执行安装脚本
+if ! command -v brew &> /dev/null; then
+    echo "Homebrew not found. Installing..."
+    install_homebrew
+    echo "Homebrew is installed."
+else
+    echo "Homebrew is already installed."
+fi
 
 # 替换brew 源为中科大的数据源
 # 替换 brew.git
@@ -86,6 +98,7 @@ check_and_install_dependencies() {
 check_and_install_dependencies wget
 check_and_install_dependencies dpkg
 ```
+
 ### JDK脚本安装
 ```shell
 #!/bin/bash
