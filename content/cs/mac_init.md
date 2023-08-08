@@ -4,6 +4,10 @@
 ```shell
 echo $SHELL
 ```
+```shell
+logan@B-WCV2MD6M-2006 4_script % echo $SHELL
+/bin/zsh
+```
 
 ## 文件目录配置
 
