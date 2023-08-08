@@ -62,6 +62,9 @@ bash install-brew.sh
 
 # 删除安装脚本
 rm install-brew.sh
+
+# 使用brew安装基础的终端能力
+brew install wget
 ```
 ### JDK脚本安装
 ```shell
