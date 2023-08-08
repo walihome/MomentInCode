@@ -51,6 +51,9 @@ export HOMEBREW_CORE_GIT_REMOTE=https://mirrors.ustc.edu.cn/homebrew-core.git
 
 # 运行安装脚本
 bash install-brew.sh
+
+# 删除安装脚本
+rm install-brew.sh
 ```
 ### JDK脚本安装
 ```shell
