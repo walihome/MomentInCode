@@ -1,5 +1,10 @@
 # 电脑安装指南
 
+## 如何判断当前shell 是bash 还是zsh
+```shell
+echo $SHELL
+```
+
 ## 文件目录配置
 
 以下为基础文件安装脚本，取名install.sh，需要注意的是，不要使用root用户或者其他用户来执行这个脚本，就以当前用户来执行，否则会出现文件权限访问问题！
@@ -111,24 +116,17 @@ brew install openjdk@8
 
 # 获取安装地址，用户配置环境变量
 jdk_directory=$(ls -d /usr/local/Cellar/openjdk@8/*)
-jdk_bin="$jdk_directory/bin"
-
-# 配置 bash 环境变量
-echo "export JAVA_HOME=$jdk_bin" >> ~/.bash_profile
-echo 'export PATH=$JAVA_HOME/bin:$PATH' >> ~/.bash_profile
 
 # 配置 zsh 环境变量（如果使用的是 zsh）
-echo "export JAVA_HOME=$jdk_bin" >> ~/.zshrc
+echo "export JAVA_HOME=$jdk_directory" >> ~/.zshrc
 echo 'export PATH=$JAVA_HOME/bin:$PATH' >> ~/.zshrc
 
 # 生效环境变量
-source ~/.bash_profile
 source ~/.zshrc
 
 # 验证安装
 java -version
 ```
-
 
 ## 电脑软件配置
 - [ ] Paste
