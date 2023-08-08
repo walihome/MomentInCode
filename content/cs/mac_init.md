@@ -63,6 +63,15 @@ bash install-brew.sh
 # 删除安装脚本
 rm install-brew.sh
 
+# 替换brew 源为中科大的数据源
+# 替换 brew.git
+cd "$(brew --repo)"
+git remote set-url origin https://mirrors.ustc.edu.cn/brew.git
+
+# 替换 homebrew-core.git
+cd "$(brew --repo)/Library/Taps/homebrew/homebrew-core"
+git remote set-url origin https://mirrors.ustc.edu.cn/homebrew-core.git
+
 # 使用brew安装基础的终端能力
 brew install wget
 ```
