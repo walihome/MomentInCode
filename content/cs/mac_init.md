@@ -55,7 +55,7 @@ mkdir ~/Downloads/chrome
 homebrew官网：https://brew.sh/
 
 
-### homebrew安装
+### homebrew安装脚本
 ```shell
 # homebrew安装脚本
 install_homebrew() {
@@ -108,7 +108,7 @@ check_and_install_dependencies wget
 check_and_install_dependencies dpkg
 ```
 
-### JDK脚本安装
+### JDK安装脚本
 ```shell
 #!/bin/bash
 
@@ -130,6 +130,28 @@ source ~/.zshrc
 
 # 验证安装
 java -version
+```
+
+### MAVEN安装脚本
+```shell
+# 指定安装目录
+install_dir="/Users/logan/box/3_file/quiet_corner/maven"
+
+# 定义 Maven 版本号
+maven_version="3.6.3"
+
+# 下载 Maven 安装包
+wget https://logan-download.oss-cn-hangzhou.aliyuncs.com/apache-maven-$maven_version-bin.tar.gz
+
+# 解压安装包
+tar xzf apache-maven-$maven_version-bin.tar.gz
+
+# 将 Maven 移动到指定目录
+mv apache-maven-$maven_version $install_dir
+
+# 设置环境变量
+echo "export PATH=\$PATH:$install_dir/apache-maven-$maven_version/bin" >> ~/.zshrc
+source ~/.zshrc
 ```
 
 ## 电脑软件配置
