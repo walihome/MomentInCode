@@ -73,8 +73,18 @@ cd "$(brew --repo)/Library/Taps/homebrew/homebrew-core"
 git remote set-url origin https://mirrors.ustc.edu.cn/homebrew-core.git
 
 # 使用brew安装基础的终端能力
-brew install wget
-brew install dpkg
+check_and_install_dependencies() {
+    dependency=$1
+    if ! command -v $dependency &> /dev/null; then
+        echo "$dependency is not installed, installing..."
+        brew install $dependency
+    else
+        echo "$dependency is already installed"
+    fi
+}
+
+check_and_install_dependencies wget
+check_and_install_dependencies dpkg
 ```
 ### JDK脚本安装
 ```shell
