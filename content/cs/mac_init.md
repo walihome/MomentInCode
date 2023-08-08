@@ -30,4 +30,5 @@ mkdir ~/box/1_code/4_script
 
 # 针对设置，创建对于的目录
 mkdir ~/box/4_config/maven_setting
+mkdir ~/box/4_config/idea_setting
 ```
