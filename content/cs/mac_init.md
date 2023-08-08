@@ -153,6 +153,51 @@ mv apache-maven-$maven_version $install_dir
 echo "export PATH=\$PATH:$install_dir/apache-maven-$maven_version/bin" >> ~/.zshrc
 source ~/.zshrc
 ```
+### VSCODE下载脚本
+```shell
+#!/bin/bash
+
+# 下载链接
+echo "begin to install vscode"
+
+extract_dir="/Users/logan/box/3_file/quiet_corner/vscode"
+wget_url="https://vscode.cdn.azure.cn/stable/6445d93c81ebe42c4cbd7a60712e0b17d9463e97/VSCode-darwin-universal.zip"
+file_name="VSCode-darwin-universal.zip"
+
+check_and_create_folder() {
+    folder=$1
+    if [ ! -d "$folder" ]; then
+        mkdir "$folder"
+        echo "文件夹「$folder」已创建"
+    else
+        echo "文件夹「$folder」已存在"
+    fi
+}
+check_and_downlaod_file() {
+    file_path=$1
+    url=$2
+    if [ -f "$file_path" ]; then
+        echo "文件「$file_path」存在"
+        # 执行您的动作
+    else
+        echo "文件「$file_path」不存在"
+        # 执行其他动作
+        # 下载 VS Code
+        wget $url
+
+        # 解压文件
+        unzip VSCode-darwin-universal.zip
+    fi
+}
+check_and_downlaod_file $file_name $wget_url
+
+# 移动文件到指定目录
+check_and_create_folder $extract_dir
+mv $file_name $extract_dir
+
+# 输出完成信息
+echo "$file_name 已下载并解压到目录：$extract_dir"
+```
 
 ## 电脑软件配置
 - [ ] Paste
