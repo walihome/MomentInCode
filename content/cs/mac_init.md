@@ -52,6 +52,33 @@ export HOMEBREW_CORE_GIT_REMOTE=https://mirrors.ustc.edu.cn/homebrew-core.git
 # 运行安装脚本
 bash install-brew.sh
 ```
+### JDK脚本安装
+```shell
+#!/bin/bash
+
+# 安装 JDK
+brew install openjdk@8
+
+# 获取安装地址，用户配置环境变量
+jdk_directory=$(ls -d /usr/local/Cellar/openjdk@8/*)
+jdk_bin="$jdk_directory/bin"
+
+# 配置 bash 环境变量
+echo "export JAVA_HOME=$jdk_bin" >> ~/.bash_profile
+echo 'export PATH=$JAVA_HOME/bin:$PATH' >> ~/.bash_profile
+
+# 配置 zsh 环境变量（如果使用的是 zsh）
+echo "export JAVA_HOME=$jdk_bin" >> ~/.zshrc
+echo 'export PATH=$JAVA_HOME/bin:$PATH' >> ~/.zshrc
+
+# 生效环境变量
+source ~/.bash_profile
+source ~/.zshrc
+
+# 验证安装
+java -version
+```
+
 
 ## 电脑软件配置
 - [ ] Paste
