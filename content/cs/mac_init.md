@@ -34,5 +34,5 @@ mkdir ~/box/4_config/idea_setting
 
 
 # 针对下载内容，增加对于目录
-mkdir ~/Documents/chrome
+mkdir ~/Downloads/chrome
 ```
