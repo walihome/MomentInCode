@@ -74,6 +74,7 @@ git remote set-url origin https://mirrors.ustc.edu.cn/homebrew-core.git
 
 # 使用brew安装基础的终端能力
 brew install wget
+brew install dpkg
 ```
 ### JDK脚本安装
 ```shell
