@@ -213,14 +213,14 @@ echo "安装完成"
 
 # Add git aliases to Bash configuration file
 # 针对 git alias
-echo "alias gs='git status'" >> ~/.bashrc
-echo "alias gb='git branch'" >> ~/.bashrc
-echo "alias gc='git checkout'" >> ~/.bashrc
-echo "alias gf='git fetch --all'" >> ~/.bashrc
-echo "alias gl='git log'" >> ~/.bashrc
+echo "alias gs='git status'" >> ~/.zshrc
+echo "alias gb='git branch'" >> ~/.zshrc
+echo "alias gc='git checkout'" >> ~/.zshrc
+echo "alias gf='git fetch --all'" >> ~/.zshrc
+echo "alias gl='git log'" >> ~/.zshrc
 
 # Reload the Bash configuration
-source ~/.bashrc
+source ~/.zshrc
 
 echo "Git aliases have been added to your Bash configuration."
 ```
