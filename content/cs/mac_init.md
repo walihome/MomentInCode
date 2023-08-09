@@ -206,6 +206,26 @@ echo "安装完成"
 
 ```
 
+### 终端配置
+#### 快捷键配置
+```shell
+#!/bin/bash
+
+# Add git aliases to Bash configuration file
+# 针对 git alias
+echo "alias gs='git status'" >> ~/.bashrc
+echo "alias gb='git branch'" >> ~/.bashrc
+echo "alias gc='git checkout'" >> ~/.bashrc
+echo "alias gf='git fetch --all'" >> ~/.bashrc
+echo "alias gl='git log'" >> ~/.bashrc
+
+# Reload the Bash configuration
+source ~/.bashrc
+
+echo "Git aliases have been added to your Bash configuration."
+```
+
+
 ## 电脑软件配置
 - [ ] Paste
 
