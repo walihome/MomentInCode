@@ -1,5 +1,38 @@
 # 电脑安装指南
 
+```mermaid
+graph LR
+    A[开发环境安装脚本] 
+    A --> 1B(文件目录配置)
+    A --> 1C(软件配置)
+    A --> 1D(电脑基础配置)
+    
+    1C --> 2A(软件下载脚本)
+    1C --> 2B(软件配置脚本)
+    
+    1D --> 3A(触发角配置)
+    1D --> 3B(快捷键配置)
+    1D --> 3C(trouchbar配置)
+    
+    
+
+    style A fill:#26A69A, stroke:#ffffff
+    style 1B fill:#B2DFDB, stroke:#ffffff
+    style 1C fill:#B2DFDB, stroke:#ffffff
+    style 1D fill:#B2DFDB, stroke:#ffffff
+    
+    style 2A fill:#B2DFDB, stroke:#ffffff
+    style 2B fill:#B2DFDB, stroke:#ffffff
+    
+    style 3A fill:#B2DFDB, stroke:#ffffff
+    style 3B fill:#B2DFDB, stroke:#ffffff
+    style 3C fill:#B2DFDB, stroke:#ffffff
+
+    direction LR
+```
+
+
+
 ## 如何判断当前shell 是bash 还是zsh
 ```shell
 echo $SHELL
